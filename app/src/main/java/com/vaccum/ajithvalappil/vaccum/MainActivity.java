@@ -264,17 +264,34 @@ public class MainActivity extends AppCompatActivity {
     }
     public void left(View view){
         sendMessage("l");
+        sleep();
     }
     public void right(View view){
         sendMessage("r");
+        sleep();
     }
     public void stop(View view){
         sendMessage("s");
     }
+
     public void up(View view){
         sendMessage("u");
+        sleep();
     }
-    public void down(View view){sendMessage("d");}
+
+    private void sleep(){
+        try {
+            Thread.sleep(100);
+            sendMessage("s");
+        }catch(Exception ee){
+
+        }
+    }
+
+    public void down(View view){
+        sendMessage("d");
+        sleep();
+    }
 
     public void processData(){
         Runnable runnable = new Runnable() {
